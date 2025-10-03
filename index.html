@@ -58,6 +58,22 @@
       gtag('config', 'AW-17614704877');
     </script>
 
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17614704877/xiH-CN6j9KQbEO2hrM9B',
+            'event_callback': callback
+        });
+        return (typeof url !== 'undefined' && url);
+      }
+    </script>
+
+
 
   </head>
   <body>
@@ -577,8 +593,8 @@
                       <i class="lni lni-phone"></i>
                     </div>
                     <div class="text">                    
-                      <a href="tel:2400300">Clínica: 2400300</a><br>
-                      <a href="tel:2222087506">Celular: 2222087506</a>                   
+                      <a href="tel:2400300" onclick="gtag_report_conversion();">Clínica: 2400300</a><br>
+                      <a href="tel:2222087506" onclick="gtag_report_conversion();">Celular: 2222087506</a>                   
                     </div>
                   </div>
                 </div>
@@ -588,7 +604,9 @@
                       <i class="lni lni-whatsapp"></i>
                     </div>
                     <div class="text">                      
-                      <a href="https://wa.me/2222087506" target="_blank">
+                      <a href="https://wa.me/2222087506" 
+                        onclick="gtag_report_conversion();"
+                        target="_blank">
                         <p>22 22 08 75 06</p>   
                       </a>        
                     </div>
